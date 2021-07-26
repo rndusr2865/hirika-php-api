@@ -22,7 +22,8 @@ class m210726_101001_create_org_table extends Migration
             '{{%org}}',
             'parent_id',
             '{{%org}}',
-            'id'
+            'id',
+            'SET NULL'
         );
     }
 

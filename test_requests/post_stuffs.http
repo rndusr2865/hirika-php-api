@@ -1,0 +1,9 @@
+POST http://localhost:8080/orgs
+Content-Type: application/json
+
+{
+	"org_name": "Paradise Island",
+	"parent": 0
+}
+
+###

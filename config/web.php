@@ -1,4 +1,6 @@
 <?php
+use \yii\web\Response;
+
 
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
@@ -18,6 +20,10 @@ $config = [
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ],
+        ],
+        'response'     => [
+            'class'         => Response::class,
+            'format'        => Response::FORMAT_JSON
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -49,10 +55,10 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-            'enableStrictParsing' => true,
-            'rules' => [
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'org']
-            ],
+            'enableStrictParsing' => false,
+//            'rules' => [
+//                ['class' => 'yii\rest\UrlRule', 'controller' => 'org']
+//            ],
         ],
     ],
     'params' => $params,

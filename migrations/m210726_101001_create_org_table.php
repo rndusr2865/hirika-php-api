@@ -15,16 +15,16 @@ class m210726_101001_create_org_table extends Migration
         $this->createTable('{{%org}}', [
             'id' => $this->primaryKey(),
             'org_name' => $this->string()->notNull(),
-            'parent_id' => $this->integer(),
+            'parent_id' => $this->text(),
         ]);
-        $this->addForeignKey(
-            'fk-parent_id-id',
-            '{{%org}}',
-            'parent_id',
-            '{{%org}}',
-            'id',
-            'SET NULL'
-        );
+//        $this->addForeignKey(
+//            'fk-parent_id-id',
+//            '{{%org}}',
+//            'parent_id',
+//            '{{%org}}',
+//            'id',
+//            'SET NULL'
+//        );
     }
 
     /**

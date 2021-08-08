@@ -31,7 +31,7 @@ class Org extends \yii\db\ActiveRecord
     {
         return [
             [['org_name'], 'required'],
-            [['parent_id'], 'integer'],
+            [['parent_id'], 'string', 'max' => 255],
             [['org_name'], 'string', 'max' => 255],
             [['parent_id'], 'exist', 'skipOnError' => true, 'targetClass' => Org::className(), 'targetAttribute' => ['parent_id' => 'id']],
         ];
